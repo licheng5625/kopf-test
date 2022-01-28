@@ -39,7 +39,7 @@
 	```
 
 	You will see 2 CRDs are created.
-	[](pic.png)
+	![pic](pic1.png)
 5. deploy operators
 
 	```
