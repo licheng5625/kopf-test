@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nats-example-operator
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      application: nats-example-operator
+  template:
+    metadata:
+      labels:
+        application: nats-example-operator
+    spec:
+      serviceAccountName: kopfexample-account
+      containers:
+      - name: the-operator-test
+        image: kopf/nats-operator-test
+        imagePullPolicy: Never
